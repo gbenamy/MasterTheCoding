@@ -38,7 +38,11 @@ int main() {
   
   twoSums = twoSum(arr1, 4, 4, NULL);
   printf("the coordinate are:[%d][%d]\n",twoSums[0],twoSums[1]);
+  containsDuplicate(arr1, 4);
+
 
   printf("done\n");
+
+
   return 0;
 }

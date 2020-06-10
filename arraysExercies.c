@@ -81,3 +81,71 @@ void moveZeroes(int* nums, int numsSize){
         }
 
 }
+
+
+
+
+
+int containsDuplicate(int* nums, int numsSize){
+    
+ typedef struct tree_template{
+     int val;
+     struct tree_template * left;
+     struct tree_template * right;
+     
+ }tree;
+    
+    tree * head = (tree*)malloc(sizeof(tree));
+    head->right = NULL;
+    head->left = NULL;
+    head->val = nums[0];
+    tree * runner= NULL;
+    tree * prevRunner = NULL;
+    
+
+    
+    for (int i = 1; i < numsSize; i++){
+        int insertVal = nums[i];
+        runner = head;
+        while (runner){
+            
+            if(insertVal>(runner->val)){
+                    prevRunner= runner;
+                    runner = runner->right;
+                
+                
+            }
+            else {//insertVal smaller or equal
+                if (insertVal == runner->val){//double
+                    return 1;
+        
+                }
+                prevRunner = runner;
+                runner = runner->left;
+                
+            }
+            
+        }
+        
+        tree * temp = (tree*)malloc(sizeof(tree));
+        temp->val = insertVal;
+        temp->right = NULL;
+        temp->left = NULL;
+        
+        if(insertVal > prevRunner->val){
+            prevRunner->right = temp;
+            
+        }
+        else{
+            prevRunner->left = temp;
+        }
+        
+        
+            
+            
+        }
+    return 0;
+        
+}
+
+
