@@ -149,3 +149,33 @@ int containsDuplicate(int* nums, int numsSize){
 }
 
 
+
+
+void rotate(int* nums, int numsSize, int k){
+
+  //First Ver O(n) Space, simple solution
+/*    
+    int * newArr = (int*)malloc(sizeof(int)*numsSize);
+    
+    for(int i = 0; i< numsSize; i++){
+        newArr[((i+k)%numsSize)]=nums[i];
+    }
+    
+    for (int i = 0; i<numsSize; i++){
+        nums[i]=newArr[i];
+    }
+
+Success
+Details 
+Runtime: 16 ms, faster than 41.64% of C online submissions for Rotate Array.
+Memory Usage: 7.5 MB, less than 10.73% of C online submissions for Rotate Array.
+
+
+
+    */
+
+
+//O(1) Space solution
+
+}
+
