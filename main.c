@@ -66,6 +66,8 @@ int main() {
 
 
   listPrint(&a);
+    listPrint(reverseList2(&a));
+
   listPrint(reverseList(&a));
 
 

@@ -32,4 +32,24 @@ list * reverseList(list * head){
 
   return newHead;
   
+} 
+
+list * reverseList2 (list * head){
+  list * first = head; 
+  list * second= head->next;
+  list * temp = NULL;
+
+  while(second){
+    if(first==head){
+      first->next = NULL;
+
+    }
+    temp = second -> next;
+    second -> next =  first;
+    first = second;
+    second = temp;
+
+  }
+  return first;
+
 }
