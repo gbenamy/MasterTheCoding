@@ -2,6 +2,11 @@
 #define STRSIZE 256
 //void reverseAString(char str[]);
 
+typedef struct list_template{
+  int val;
+  struct list_template * next;
+}list; 
+
 
 void arrPrint(int arr[], int len){
   printf("arr:{");
@@ -18,9 +23,26 @@ int main() {
 
   int arr1[] = {0,3,4,34};
   int arr2[] = {3,4,6,30};
+  int arr3[] = {3,4,6,2,5};
+
   int * twoSums = NULL;
   
   char str[STRSIZE] = "abc";
+
+  list a,b,c,d;
+  a.val=1;
+  a.next = &b;
+
+  b.val=2;
+  b.next = &c;
+
+  c.val=3;
+  c.next = &d;
+
+  d.val=4;
+  d.next = NULL;
+
+
 
 
 
@@ -40,8 +62,16 @@ int main() {
   printf("the coordinate are:[%d][%d]\n",twoSums[0],twoSums[1]);
   containsDuplicate(arr1, 4);
 
+  printf("The first reoccuring numbert is: %d\n",firstRecurringCharacter(arr3,5));
+
+
+  listPrint(&a);
+  listPrint(reverseList(&a));
+
 
   printf("done\n");
+
+
 
 
   return 0;
